@@ -76,7 +76,7 @@ tests/                  # Jasmine tests for utility functions
 
 1. Clone or download the repository:
    ```bash
-   git clone https://github.com/yourusername/Amazon-Project.git
+   git clone https://github.com/Aadarsh-Sharma-7197/Amazon-Project.git
    ```
 2. Navigate to the project directory and open `index.html` in a browser to explore the storefront.
 3. To verify functionality, open `tests/tests.html` which runs the included Jasmine suite.
