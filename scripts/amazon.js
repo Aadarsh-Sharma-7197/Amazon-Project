@@ -1,24 +1,25 @@
-import { cart, addToCart, CalculateCartQuantity } from '../data/cart.js';
-import { products } from '../data/products.js';
+import { cart, addToCart, CalculateCartQuantity } from "../data/cart.js";
+import { products } from "../data/products.js";
 // import { priceCalculator } from './utils/money.js';
-import { loadProducts } from '../data/products.js';
+import { loadProducts } from "../data/products.js";
 
 loadProducts(renderProductsGrid);
 
-function renderProductsGrid(){
-
+function renderProductsGrid() {
   let productHTML = "";
   const url = new URL(window.location.href);
-  const search = url.searchParams.get('search');
+  const search = url.searchParams.get("search");
   let filteredProducts = products;
-  if(search){
-    filteredProducts = products.filter(product=>{
-      return product.keywords.includes(search.toLowerCase()) ||
-      product.name.toLocaleLowerCase().includes(search.toLowerCase());
+  if (search) {
+    filteredProducts = products.filter((product) => {
+      return (
+        product.keywords.includes(search.toLowerCase()) ||
+        product.name.toLocaleLowerCase().includes(search.toLowerCase())
+      );
     });
   }
-  filteredProducts.forEach(product=>{
-    productHTML+= `
+  filteredProducts.forEach((product) => {
+    productHTML += `
         <div class="product-container">
         <div class="product-image-container">
           <img class="product-image"
@@ -67,28 +68,29 @@ function renderProductsGrid(){
         js-add-to-cart" data-product-id="${product.id}">
           Add to Cart
         </button>
-      </div>`
+      </div>`;
   });
-  document.querySelector('.js-products-grid').innerHTML = productHTML;
+  document.querySelector(".js-products-grid").innerHTML = productHTML;
 
-  document.querySelectorAll('.js-add-to-cart')
-  .forEach(button=>{
-    button.addEventListener('click',()=>{
-      const {productId} = button.dataset;
+  document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+    button.addEventListener("click", () => {
+      const { productId } = button.dataset;
       addToCart(productId);
-      document.querySelector('.js-cart-quantity').innerHTML = CalculateCartQuantity();
+      document.querySelector(".js-cart-quantity").innerHTML =
+        CalculateCartQuantity();
     });
   });
-  document.querySelector('.js-cart-quantity').innerHTML = CalculateCartQuantity();
-  
-  document.querySelector('.js-search-button').addEventListener('click',()=>{
-    const search = document.querySelector('.js-search-bar').value;
-    window.location.href = `amazon.html?search=${search}`;
-  })
-  document.querySelector('.js-search-bar').addEventListener('keydown',(e)=>{
-    if(e.key === 'Enter'){
-      const search = document.querySelector('.js-search-bar').value;
-      window.location.href = `amazon.html?search=${search}`;
+  document.querySelector(".js-cart-quantity").innerHTML =
+    CalculateCartQuantity();
+
+  document.querySelector(".js-search-button").addEventListener("click", () => {
+    const search = document.querySelector(".js-search-bar").value;
+    window.location.href = `index.html?search=${search}`;
+  });
+  document.querySelector(".js-search-bar").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const search = document.querySelector(".js-search-bar").value;
+      window.location.href = `index.html?search=${search}`;
     }
-  })
+  });
 }

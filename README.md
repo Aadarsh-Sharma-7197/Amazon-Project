@@ -5,7 +5,7 @@ A lightweight, browser-based e-commerce demo that emulates key shopping experien
 ## Project Structure
 
 ```
-amazon.html             # Home page for browsing products
+index.html             # Home page for browsing products
 checkout.html           # Checkout page with order and payment summary
 orders.html             # Page showing user orders
 tracking.html           # Page for tracking shipment
@@ -78,7 +78,7 @@ tests/                  # Jasmine tests for utility functions
    ```bash
    git clone https://github.com/yourusername/Amazon-Project.git
    ```
-2. Navigate to the project directory and open `amazon.html` in a browser to explore the storefront.
+2. Navigate to the project directory and open `index.html` in a browser to explore the storefront.
 3. To verify functionality, open `tests/tests.html` which runs the included Jasmine suite.
 
 ## Contributing
