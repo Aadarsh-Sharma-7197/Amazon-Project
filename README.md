@@ -1,6 +1,6 @@
 # Amazon Project
 
-This repository contains a simple e-commerce web application inspired by Amazon. It consists of a front-end built with HTML, CSS, and JavaScript along with supporting data files and tests. The goal is to simulate basic shopping workflow including browsing products, adding items to cart, checking out, viewing orders, and tracking shipments.
+A lightweight, browser-based e-commerce demo that emulates key shopping experiences found on major retail sites. Built entirely with standard web technologies, this project showcases a full client-side workflow—from product browsing to order tracking—without any server backend. It is ideal for learning, experimentation, and as a starting point for more complex applications.
 
 ## Project Structure
 
@@ -58,13 +58,13 @@ tests/                  # Jasmine tests for utility functions
   MIT.LICENSE
 ```
 
-## Features
+## Key Features
 
-- Browse products using `amazon.html` powered by `amazon.js` and `products.json` data.
-- Add, update, and remove items from shopping cart.
-- Checkout flow with order and payment summary on `checkout.html`.
-- View past orders on `orders.html` and track shipments on `tracking.html`.
-- Basic client-side validation and price formatting utilities (`money.js`).
+- **Product catalog** rendered from a local JSON resource (`products.json`).
+- **Shopping cart** supporting quantity adjustments and item removal.
+- **Checkout experience** with order and payment summaries.
+- **Order history** display and **shipment tracking** simulation.
+- Utility modules providing formatting and simple validation (e.g. `money.js`).
 
 ## Technologies
 
@@ -74,14 +74,13 @@ tests/                  # Jasmine tests for utility functions
 
 ## Getting Started
 
-1. Clone the repository:
+1. Clone or download the repository:
    ```bash
    git clone https://github.com/yourusername/Amazon-Project.git
    ```
-2. Open `amazon.html` in a web browser to start using the application.
-3. Run tests by opening `tests/tests.html` in a browser.
+2. Navigate to the project directory and open `amazon.html` in a browser to explore the storefront.
+3. To verify functionality, open `tests/tests.html` which runs the included Jasmine suite.
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or submit pull requests for enhancements or bug fixes.
-
+Contributions are appreciated. If you have ideas for improvements or bug fixes, please submit an issue or pull request. This project is a good place to experiment with JavaScript patterns and front-end architecture.
